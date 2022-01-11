@@ -19,6 +19,10 @@
     <ClInclude Include="src\Lyue\Log.h">
       <Filter>Lyue</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lyue\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\Lyue\Events\Event.h" />
+    <ClInclude Include="src\Lyue\Events\KeyEvent.h" />
+    <ClInclude Include="src\Lyue\Events\MouseEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lyue\Application.cpp">
