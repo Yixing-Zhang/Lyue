@@ -9,3 +9,5 @@
 #else
 	#error Lyue only supports Windows!
 #endif
+
+#define BIT(X) (1 << x)
