@@ -40,6 +40,7 @@
     <ClInclude Include="src\Lyue\Log.h">
       <Filter>Lyue</Filter>
     </ClInclude>
+    <ClInclude Include="src\lypch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lyue\Application.cpp">
@@ -54,5 +55,6 @@
     <ClCompile Include="src\Lyue\Log.cpp">
       <Filter>Lyue</Filter>
     </ClCompile>
+    <ClCompile Include="src\lypch.cpp" />
   </ItemGroup>
 </Project>

@@ -19,6 +19,9 @@ project "Lyue"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "lypch.h"
+	pchsource "Lyue/src/lypch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",

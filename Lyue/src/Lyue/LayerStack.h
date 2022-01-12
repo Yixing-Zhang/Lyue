@@ -3,8 +3,6 @@
 #include "Lyue/Core.h"
 #include "Layer.h"
 
-#include <vector>
-
 namespace Lyue
 {
 

@@ -1,10 +1,7 @@
 #pragma once
 
+#include "lypch.h"
 #include "Lyue/Core.h"
-
-#include <string>
-#include <functional>
-#include <sstream>
 
 namespace Lyue
 {
