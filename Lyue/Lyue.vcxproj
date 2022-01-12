@@ -143,10 +143,14 @@
     <ClInclude Include="src\Lyue\Events\Event.h" />
     <ClInclude Include="src\Lyue\Events\KeyEvent.h" />
     <ClInclude Include="src\Lyue\Events\MouseEvent.h" />
+    <ClInclude Include="src\Lyue\Layer.h" />
+    <ClInclude Include="src\Lyue\LayerStack.h" />
     <ClInclude Include="src\Lyue\Log.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lyue\Application.cpp" />
+    <ClCompile Include="src\Lyue\Layer.cpp" />
+    <ClCompile Include="src\Lyue\LayerStack.cpp" />
     <ClCompile Include="src\Lyue\Log.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -4,6 +4,9 @@
     <Filter Include="Lyue">
       <UniqueIdentifier>{84CE887C-7005-8A0D-19F2-6F100508060F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Lyue\Events">
+      <UniqueIdentifier>{E87D3CAA-5433-B59F-DD27-AF7649DCABA3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Lyue.h" />
@@ -16,16 +19,36 @@
     <ClInclude Include="src\Lyue\EntryPoint.h">
       <Filter>Lyue</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lyue\Events\ApplicationEvent.h">
+      <Filter>Lyue\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lyue\Events\Event.h">
+      <Filter>Lyue\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lyue\Events\KeyEvent.h">
+      <Filter>Lyue\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lyue\Events\MouseEvent.h">
+      <Filter>Lyue\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lyue\Layer.h">
+      <Filter>Lyue</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lyue\LayerStack.h">
+      <Filter>Lyue</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lyue\Log.h">
       <Filter>Lyue</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lyue\Events\ApplicationEvent.h" />
-    <ClInclude Include="src\Lyue\Events\Event.h" />
-    <ClInclude Include="src\Lyue\Events\KeyEvent.h" />
-    <ClInclude Include="src\Lyue\Events\MouseEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lyue\Application.cpp">
+      <Filter>Lyue</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lyue\Layer.cpp">
+      <Filter>Lyue</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lyue\LayerStack.cpp">
       <Filter>Lyue</Filter>
     </ClCompile>
     <ClCompile Include="src\Lyue\Log.cpp">

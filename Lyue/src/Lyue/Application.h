@@ -1,7 +1,10 @@
 #pragma once
 
 #include "Core.h"
-#include "Events/Event.h"
+
+#include "Lyue/LayerStack.h"
+#include "Lyue/Events/Event.h"
+#include "Lyue/Events/ApplicationEvent.h"
 
 namespace Lyue
 {
@@ -13,6 +16,14 @@ namespace Lyue
 		virtual ~Application();
 
 		void Run();
+
+		void OnEvent(Event& e);
+
+		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* overlay);
+
+	private:
+
 	};
 
 	//To be defined in the actual applicaiton
