@@ -10,4 +10,4 @@
 	#error Lyue only supports Windows!
 #endif
 
-#define BIT(X) (1 << x)
+#define BIT(x) (1 << x)
