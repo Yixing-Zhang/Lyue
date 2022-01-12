@@ -36,13 +36,14 @@ namespace Lyue
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
-	class Event
+	class LYUE_API Event
 	{
+		friend class EventDispatcher;
 	public:
 		virtual ~Event() = default;
 
-		bool Handled = false;
-
+		//const表示不修改对象，=0表示为纯虚函数，无法实例化
+		//同时意味着纯虚函数需要我们去实现它才能调用
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
 		virtual int GetCategoryFlags() const = 0;
@@ -52,23 +53,27 @@ namespace Lyue
 		{
 			return GetCategoryFlags() & category;
 		}
+
+	protected:
+		bool m_Handled = false;
 	};
 
-	class EventDispatcher
+	class LYUE_API EventDispatcher
 	{
+		template<typename T>
+		using EventFn = std::function <bool(T&)>;
 	public:
 		EventDispatcher(Event& event)
 			: m_Event(event)
 		{
 		}
 
-		template<typename T, typename F>
-
-		bool Dispatch(const F& func)
+		template<typename T>
+		bool Dispatch(EventFn<T> func)
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				m_Event.Handled |= func(static_cast<T&>(m_Event));
+				m_Event.m_Handled = func(static_cast<T&>(m_Event));
 				return true;
 			}
 			return false;
@@ -78,7 +83,7 @@ namespace Lyue
 		Event& m_Event;
 	};
 
-	inline std::ostream& operator<<(std::ostream& os, Event& e)
+	inline std::ostream& operator<<(std::ostream& os, const Event& e)
 	{
 		return os << e.ToString();
 	}

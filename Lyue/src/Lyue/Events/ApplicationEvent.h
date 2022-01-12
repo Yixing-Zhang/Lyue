@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Lyue/Events/Event.h"
+#include "Event.h"
 
 namespace Lyue
 {
