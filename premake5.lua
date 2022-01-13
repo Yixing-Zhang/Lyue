@@ -11,6 +11,12 @@ workspace "Lyue"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Lyue/vendor/GLFW/include"
+
+include "Lyue/vendor/GLFW"
+
 project "Lyue"
 	location "Lyue"
 	kind "SharedLib"
@@ -30,8 +36,15 @@ project "Lyue"
 
 	includedirs
 	{
+		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{prj.name}/src"
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"

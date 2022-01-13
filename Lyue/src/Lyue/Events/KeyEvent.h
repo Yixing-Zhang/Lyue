@@ -5,7 +5,7 @@
 namespace Lyue
 {
 
-	class LYUE_API KeyEvent : Event
+	class LYUE_API KeyEvent : public Event
 	{
 	public:
 		inline int GetKeyCode() const { return m_KeyCode; }
@@ -21,7 +21,7 @@ namespace Lyue
 		int m_KeyCode;
 	};
 
-	class LYUE_API KeyPressedEvent : KeyEvent
+	class LYUE_API KeyPressedEvent : public KeyEvent
 	{
 	public:
 		KeyPressedEvent(int keycode, int repeatcount)
@@ -44,7 +44,7 @@ namespace Lyue
 		int m_RepeatCount;
 	};
 
-	class LYUE_API KeyReleasedEvent : KeyEvent
+	class LYUE_API KeyReleasedEvent : public KeyEvent
 	{
 	public:
 		KeyReleasedEvent(int keycode)

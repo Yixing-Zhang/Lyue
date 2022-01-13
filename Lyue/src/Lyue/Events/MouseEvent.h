@@ -5,7 +5,7 @@
 namespace Lyue
 {
 
-	class LYUE_API MouseMovedEvent : Event
+	class LYUE_API MouseMovedEvent : public Event
 	{
 	public:
 		MouseMovedEvent(float x, float y)
@@ -31,7 +31,7 @@ namespace Lyue
 		float m_MouseY;
 	};
 
-	class LYUE_API MouseScrolledEvent : Event
+	class LYUE_API MouseScrolledEvent : public Event
 	{
 	public:
 		MouseScrolledEvent(float xOffset, float yOffset)
@@ -57,7 +57,7 @@ namespace Lyue
 		float m_YOffset;
 	};
 
-	class LYUE_API MouseButtonEvent : Event
+	class LYUE_API MouseButtonEvent : public Event
 	{
 	public:
 		inline int GetMouseButton() const { return m_Button; }
@@ -73,7 +73,7 @@ namespace Lyue
 		int m_Button;
 	};
 
-	class LYUE_API MouseButtonPressedEvent : MouseButtonEvent
+	class LYUE_API MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonPressedEvent(int button)
@@ -91,7 +91,7 @@ namespace Lyue
 		EVENT_CLASS_TYPE(MouseButtonPressed)
 	};
 
-	class LYUE_API MouseButtonReleasedEvent : MouseButtonEvent
+	class LYUE_API MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonReleasedEvent(int button)
