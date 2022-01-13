@@ -1,6 +1,6 @@
 [submodule "Lyue/vendor/spdlog"]
 	path = Lyue/vendor/spdlog
-	url = https://github.com/gabime
+	url = https://github.com/gabime/spdlog
 [submodule "Lyue/vendor/GLFW"]
 	path = Lyue/vendor/GLFW
 	url = https://github.com/Yixing-Zhang/glfw
