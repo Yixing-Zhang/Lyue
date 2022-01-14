@@ -5,6 +5,8 @@
 #include "Lyue/Events/MouseEvent.h"
 #include "Lyue/Events/KeyEvent.h"
 
+#include <glad/glad.h>
+
 namespace Lyue
 {
 
@@ -53,9 +55,15 @@ namespace Lyue
 			s_GLFWInitialized = true;
 		}
 
-		// Create and set GLFW window
+		// Create GLFW window
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+
+		// Glad Loader
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		LY_CORE_ASSERT(status, "Failed to initialize Glad!");
+
+		// Set GLFW window user pointer (data for events)
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 

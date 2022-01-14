@@ -14,8 +14,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Lyue/vendor/GLFW/include"
+IncludeDir["Glad"] = "Lyue/vendor/Glad/include"
 
 include "Lyue/vendor/GLFW"
+include "Lyue/vendor/Glad"
 
 project "Lyue"
 	location "Lyue"
@@ -38,12 +40,14 @@ project "Lyue"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -55,7 +59,8 @@ project "Lyue"
 		defines
 		{
 			"LY_PLATFORM_WINDOWS",
-			"LY_BUILD_DLL"
+			"LY_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands

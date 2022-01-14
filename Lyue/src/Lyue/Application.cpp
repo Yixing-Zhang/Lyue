@@ -1,9 +1,9 @@
 #include "lypch.h"
 #include "Application.h"
 
-#include <GLFW/glfw3.h>
-
 #include "Lyue/Log.h"
+
+#include <glad/glad.h>
 
 namespace Lyue {
 
