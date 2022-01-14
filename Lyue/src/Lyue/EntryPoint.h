@@ -11,6 +11,7 @@ int main(int argc, char** argv)
 	int a = 5;
 	LY_INFO("Initailizing Log! Var={0}", a);
 	
+	// Create an app & Run it
 	auto app = Lyue::CreateApplication();
 	app->Run();
 	delete app;

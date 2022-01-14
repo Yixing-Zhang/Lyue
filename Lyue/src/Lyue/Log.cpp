@@ -6,9 +6,12 @@
 namespace Lyue
 {
 	
+	// Engine Core Logger
 	std::shared_ptr<spdlog::logger> Log::s_CoreLogger;
+	// Application Client Loggers
 	std::shared_ptr<spdlog::logger> Log::s_ClientLogger;
 
+	// Initializing the Loggers
 	void Log::Init()
 	{
 		spdlog::set_pattern("%^[%T] %n: %v%$");

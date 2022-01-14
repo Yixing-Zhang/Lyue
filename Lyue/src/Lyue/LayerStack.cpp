@@ -4,6 +4,7 @@
 namespace Lyue
 {
 
+	// Destructor
 	LayerStack::~LayerStack()
 	{
 		for (Layer* layer : m_Layers)
@@ -13,17 +14,20 @@ namespace Lyue
 		}
 	}
 
+	// Insert a non-overlay layer
 	void LayerStack::PushLayer(Layer* layer)
 	{
 		m_Layers.emplace(m_Layers.begin() + m_LayerInsertIndex, layer);
 		m_LayerInsertIndex++;
 	}
 
+	// Insert an overlay layer
 	void LayerStack::PushOverlay(Layer* overlay)
 	{
 		m_Layers.emplace_back(overlay);
 	}
 
+	// Delete a non-overlay layer
 	void LayerStack::PopLayer(Layer* layer)
 	{
 		auto it = std::find(m_Layers.begin(), m_Layers.begin() + m_LayerInsertIndex, layer);
@@ -35,6 +39,7 @@ namespace Lyue
 		}
 	}
 
+	// Delete an overlay layer
 	void LayerStack::PopOverlay(Layer* overlay)
 	{
 		auto it = std::find(m_Layers.begin() + m_LayerInsertIndex, m_Layers.end(), overlay);

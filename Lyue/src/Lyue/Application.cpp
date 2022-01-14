@@ -9,17 +9,20 @@ namespace Lyue {
 
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
+	// Constructor
 	Application::Application() 
 	{
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
 	}
 
+	// Destructor
 	Application::~Application() 
 	{
 
 	}
 
+	// Function that Executes when Event e Happens
 	void Application::OnEvent(Event& e)
 	{
 		EventDispatcher dispatcher(e);
@@ -28,6 +31,7 @@ namespace Lyue {
 		LY_CORE_TRACE("{0}", e);
 	}
 
+	// What Application does when Running
 	void Application::Run() 
 	{
 		while (m_Running)
@@ -38,6 +42,7 @@ namespace Lyue {
 		};
 	}
 
+	// Function that Executes when Window Closed
 	bool Application::OnWindowClose(WindowCloseEvent& e)
 	{
 		m_Running = false;

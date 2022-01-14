@@ -10,13 +10,17 @@ namespace Lyue
 	class LYUE_API Log
 	{
 	public:
+		// Initializing the Loggers
 		static void Init();
 
+		// Logger Getters
 		inline static std::shared_ptr<spdlog::logger>& GetCoreLogger() { return s_CoreLogger; }
 		inline static std::shared_ptr<spdlog::logger>& GetClientLogger() { return s_ClientLogger; }
 
 	private:
+		// Engine Core Logger
 		static std::shared_ptr<spdlog::logger> s_CoreLogger;
+		// Application Client Loggers
 		static std::shared_ptr<spdlog::logger> s_ClientLogger;
 	};
 

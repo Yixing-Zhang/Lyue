@@ -10,6 +10,7 @@ namespace Lyue
 
 	static bool s_GLFWInitialized = false;
 
+	// When GLFW initializing error
 	static void GLFWErrorCallback(int error, const char* description)
 	{
 		LY_CORE_ERROR("GLFW Error ({0}): {1}", error, description);
@@ -20,16 +21,19 @@ namespace Lyue
 		return new WindowsWindow(props);
 	}
 
+	// Constructor
 	WindowsWindow::WindowsWindow(const WindowProps& props)
 	{
 		Init(props);
 	}
 
+	// Destructor
 	WindowsWindow::~WindowsWindow()
 	{
 		Shutdown();
 	}
 
+	// Initializing
 	void WindowsWindow::Init(const WindowProps& props)
 	{
 		m_Data.Title = props.Title;
@@ -38,6 +42,7 @@ namespace Lyue
 
 		LY_CORE_INFO("Creating window {0}, ({1}, {2})", props.Title, props.Width, props.Height);
 
+		// GLFW not initialized
 		if (!s_GLFWInitialized)
 		{
 			// TODO: glfwTerminate on system shutdown
@@ -48,6 +53,7 @@ namespace Lyue
 			s_GLFWInitialized = true;
 		}
 
+		// Create and set GLFW window
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
 		glfwSetWindowUserPointer(m_Window, &m_Data);

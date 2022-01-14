@@ -8,8 +8,10 @@
 namespace Lyue
 {
 
+	// Window Props
 	struct WindowProps
 	{
+		// Attributes
 		std::string Title;
 		unsigned int Width;
 		unsigned int Height;
@@ -28,18 +30,23 @@ namespace Lyue
 	public:
 		using EventCallbackFn = std::function<void(Event&)>;
 
+		// Destructor
 		virtual ~Window() {}
 
+		// OnCall When Window Updated
 		virtual void OnUpdate() = 0;
 
+		// Getters
 		virtual unsigned int GetWidth() const = 0;
 		virtual unsigned int GetHeight() const = 0;
 
 		// Window attributes
 		virtual void SetEventCallback(const EventCallbackFn& callback) = 0;
+		// VSync the Window
 		virtual void SetVSync(bool enabled) = 0;
 		virtual bool IsVsync() const = 0;
 
+		// Create a Window
 		static Window* Create(const WindowProps& props = WindowProps());
 	};
 

@@ -9,6 +9,7 @@ namespace Lyue
 	class LYUE_API Layer
 	{
 	public:
+		// Constructor & Destructor
 		Layer(const std::string& debugName = "Layer");
 		virtual ~Layer();
 

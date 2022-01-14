@@ -1,8 +1,11 @@
 #pragma once
 
+// On Windows
 #ifdef LY_PLATFORM_WINDOWS
+	// To Build DLL
 	#ifdef LY_BUILD_DLL
 		#define LYUE_API __declspec(dllexport)
+	// To Use Dll
 	#else
 		#define LYUE_API __declspec(dllimport)
 	#endif
@@ -18,4 +21,5 @@
 	#define LY_CORE_ASSERT(x, ...)
 #endif
 
+// Event Categories Bit Operation
 #define BIT(x) (1 << x)
