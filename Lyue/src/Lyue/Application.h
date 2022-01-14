@@ -37,6 +37,8 @@ namespace Lyue
 		std::unique_ptr<Window> m_Window;
 		// Apllication Whether Still Running
 		bool m_Running = true;
+		// Application Layer Stack
+		LayerStack m_LayerStack;
 	};
 
 	//To be defined in the actual applicaiton

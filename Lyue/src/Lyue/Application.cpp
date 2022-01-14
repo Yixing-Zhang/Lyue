@@ -22,13 +22,35 @@ namespace Lyue {
 
 	}
 
+	// Appliaction Layers Operates
+	void Application::PushLayer(Layer* layer)
+	{
+		m_LayerStack.PushLayer(layer);
+	}
+
+	void Application::PushOverlay(Layer* overlay)
+	{
+		m_LayerStack.PopOverlay(overlay);
+	}
+
 	// Function that Executes when Event e Happens
 	void Application::OnEvent(Event& e)
 	{
 		EventDispatcher dispatcher(e);
+		// WindowCloseEvent will be dispatched to OnWindowClose function (close the window)
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
 
-		LY_CORE_TRACE("{0}", e);
+		// Events will be passed to the top most layer that can handle it
+		// Because the top layers should receive the event first
+		// i.e. Click on the screen, the top layer(button) should handle it first.
+		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();)
+		{
+			(*--it)->OnEvent(e);
+			if (e.Handled)
+			{
+				break;
+			}
+		}
 	}
 
 	// What Application does when Running
@@ -38,6 +60,12 @@ namespace Lyue {
 		{
 			glClearColor(1, 0, 1, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
+
+			for (Layer* layer : m_LayerStack)
+			{
+				layer->OnUpdate();
+			}
+
 			m_Window->OnUpdate();
 		};
 	}

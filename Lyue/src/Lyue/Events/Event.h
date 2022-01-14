@@ -39,10 +39,12 @@ namespace Lyue
 
 	class LYUE_API Event
 	{
-		friend class EventDispatcher;
 	public:
 		// Destructor (need to be implemented in child class)
 		virtual ~Event() = default;
+
+		// Whether is handled already
+		bool Handled = false;
 
 		// const表示不修改对象，=0表示为纯虚函数，无法实例化
 		// 同时意味着纯虚函数需要我们去实现它才能调用
@@ -58,13 +60,9 @@ namespace Lyue
 		{
 			return GetCategoryFlags() & category;
 		}
-
-	protected:
-		// Whether is handled already
-		bool m_Handled = false;
 	};
 
-	// Event Dispatcher that Call the On... Functions when the Event e Happens
+	// Event Dispatcher that dispactch the event to the corresponding oncall function
 	class LYUE_API EventDispatcher
 	{
 		template<typename T>
@@ -82,7 +80,7 @@ namespace Lyue
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				m_Event.m_Handled = func(static_cast<T&>(m_Event));
+				m_Event.Handled = func(static_cast<T&>(m_Event));
 				return true;
 			}
 			return false;
