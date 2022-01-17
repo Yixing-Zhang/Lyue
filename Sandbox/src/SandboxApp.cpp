@@ -10,7 +10,7 @@ public:
 
 	void OnUpdate() override
 	{
-		LY_INFO("ExampleLayer::Update");
+		//LY_INFO("ExampleLayer::Update");
 	}
 
 	void OnEvent(Lyue::Event& e) override
@@ -25,6 +25,7 @@ public:
 	Sandbox() 
 	{
 		PushLayer(new ExampleLayer());
+		PushOverlay(new Lyue::ImGuiLayer());
 	}
 
 	~Sandbox() 

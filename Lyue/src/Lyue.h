@@ -6,5 +6,7 @@
 #include "Lyue/Layer.h"
 #include "Lyue/Log.h"
 
+#include "Lyue/ImGui/ImGuiLayer.h"
+
 //Entry point
 #include"Lyue/EntryPoint.h"

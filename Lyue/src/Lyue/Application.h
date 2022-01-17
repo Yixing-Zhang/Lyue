@@ -27,12 +27,18 @@ namespace Lyue
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* overlay);
 
+		// Getters
+		inline static Application& Get() { return *s_Instance; }
+		inline Window& GetWindow() { return *m_Window; }
+
 	private:
 		// Functions
 		// Function that Executes when Window Closed
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		// Attributes
+		// Instance
+		static Application* s_Instance;
 		// The Application Window
 		std::unique_ptr<Window> m_Window;
 		// Apllication Whether Still Running

@@ -4,3 +4,6 @@
 [submodule "Lyue/vendor/GLFW"]
 	path = Lyue/vendor/GLFW
 	url = https://github.com/Yixing-Zhang/glfw
+[submodule "Lyue/vendor/imgui"]
+	path = Lyue/vendor/imgui
+	url = https://github.com/Yixing-Zhang/imgui
