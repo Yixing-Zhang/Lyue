@@ -73,4 +73,24 @@ namespace Lyue
 		EVENT_CLASS_TYPE(KeyReleased)
 	};
 
+	// Key Typed Event
+	class LYUE_API KeyTypedEvent : public KeyEvent
+	{
+	public:
+		// Constructor
+		KeyTypedEvent(int keycode)
+			: KeyEvent(keycode)
+		{
+		}
+
+		std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "KeyTypedEvent: " << m_KeyCode;
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(KeyTyped)
+	};
+
 }

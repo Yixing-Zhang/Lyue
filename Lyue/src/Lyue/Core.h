@@ -23,3 +23,6 @@
 
 // Event Categories Bit Operation
 #define BIT(x) (1 << x)
+
+// Bind Event Handler Functions
+#define LY_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)

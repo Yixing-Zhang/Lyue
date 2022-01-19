@@ -7,8 +7,6 @@
 
 namespace Lyue {
 
-#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
-
 	// Singleton
 	Application* Application::s_Instance = nullptr;
 
@@ -19,7 +17,7 @@ namespace Lyue {
 
 		s_Instance = this;
 		m_Window = std::unique_ptr<Window>(Window::Create());
-		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+		m_Window->SetEventCallback(LY_BIND_EVENT_FN(Application::OnEvent));
 	}
 
 	// Destructor
@@ -46,7 +44,7 @@ namespace Lyue {
 	{
 		EventDispatcher dispatcher(e);
 		// WindowCloseEvent will be dispatched to OnWindowClose function (close the window)
-		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
+		dispatcher.Dispatch<WindowCloseEvent>(LY_BIND_EVENT_FN(Application::OnWindowClose));
 
 		// Events will be passed to the top most layer that can handle it
 		// Because the top layers should receive the event first
