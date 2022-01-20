@@ -17,9 +17,12 @@ IncludeDir["GLFW"] = "Lyue/vendor/GLFW/include"
 IncludeDir["Glad"] = "Lyue/vendor/Glad/include"
 IncludeDir["ImGui"] = "Lyue/vendor/imgui"
 
-include "Lyue/vendor/GLFW"
-include "Lyue/vendor/Glad"
-include "Lyue/vendor/imgui"
+group "Dependencies"
+	include "Lyue/vendor/GLFW"
+	include "Lyue/vendor/Glad"
+	include "Lyue/vendor/imgui"
+
+group ""
 
 project "Lyue"
 	location "Lyue"
@@ -69,7 +72,7 @@ project "Lyue"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 
 	filter "configurations:Debug"
