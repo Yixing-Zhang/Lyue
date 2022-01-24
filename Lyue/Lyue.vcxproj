@@ -150,6 +150,7 @@
     <ClInclude Include="src\Lyue\Events\KeyEvent.h" />
     <ClInclude Include="src\Lyue\Events\MouseEvent.h" />
     <ClInclude Include="src\Lyue\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Lyue\Input.h" />
     <ClInclude Include="src\Lyue\Layer.h" />
     <ClInclude Include="src\Lyue\LayerStack.h" />
     <ClInclude Include="src\Lyue\Log.h" />
@@ -157,6 +158,7 @@
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\lypch.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lyue\Application.cpp" />
@@ -169,6 +171,7 @@
     <ClCompile Include="src\lypch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

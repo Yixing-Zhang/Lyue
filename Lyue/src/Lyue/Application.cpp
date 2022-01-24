@@ -2,6 +2,7 @@
 #include "Application.h"
 
 #include "Lyue/Log.h"
+#include "Lyue/Input.h"
 
 #include <glad/glad.h>
 
@@ -72,6 +73,8 @@ namespace Lyue {
 				layer->OnUpdate();
 			}
 
+			auto [x, y] = Input::GetMousePosition();
+			LY_CORE_TRACE("{0}, {1}", x, y);
 			m_Window->OnUpdate();
 		};
 	}
