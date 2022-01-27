@@ -46,6 +46,12 @@
     <ClInclude Include="src\Lyue\ImGui\ImGuiLayer.h">
       <Filter>Lyue\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lyue\Input.h">
+      <Filter>Lyue</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lyue\KeyCodes.h">
+      <Filter>Lyue</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lyue\Layer.h">
       <Filter>Lyue</Filter>
     </ClInclude>
@@ -55,20 +61,22 @@
     <ClInclude Include="src\Lyue\Log.h">
       <Filter>Lyue</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lyue\MouseButtonCodes.h">
+      <Filter>Lyue</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lyue\Window.h">
       <Filter>Lyue</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
       <Filter>Platform\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\lypch.h" />
-    <ClInclude Include="src\Lyue\Input.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
-    <ClInclude Include="src\Lyue\KeyCodes.h" />
-    <ClInclude Include="src\Lyue\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lyue\Application.cpp">
@@ -89,10 +97,12 @@
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
       <Filter>Platform\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\lypch.cpp" />
-    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>

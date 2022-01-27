@@ -16,6 +16,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Lyue/vendor/GLFW/include"
 IncludeDir["Glad"] = "Lyue/vendor/Glad/include"
 IncludeDir["ImGui"] = "Lyue/vendor/imgui"
+IncludeDir["glm"] = "Lyue/vendor/glm"
 
 group "Dependencies"
 	include "Lyue/vendor/GLFW"
@@ -48,7 +49,8 @@ project "Lyue"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links
@@ -108,7 +110,8 @@ project "Sandbox"
 	includedirs
 	{
 		"Lyue/vendor/spdlog/include",
-		"Lyue/src"
+		"Lyue/src",
+		"%{IncludeDir.glm}"
 	}
 
 	links
