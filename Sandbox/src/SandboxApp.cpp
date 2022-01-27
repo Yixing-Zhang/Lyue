@@ -11,11 +11,15 @@ public:
 	void OnUpdate() override
 	{
 		//LY_INFO("ExampleLayer::Update");
+		if (Lyue::Input::IsKeyPressed(LY_KEY_TAB))
+		{
+			LY_TRACE("Tab is pressed!");
+		}
 	}
 
 	void OnEvent(Lyue::Event& e) override
 	{
-		LY_TRACE("{0}", e);
+		//LY_TRACE("{0}", e);
 	}
 };
 

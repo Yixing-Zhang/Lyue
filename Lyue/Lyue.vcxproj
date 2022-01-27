@@ -151,9 +151,11 @@
     <ClInclude Include="src\Lyue\Events\MouseEvent.h" />
     <ClInclude Include="src\Lyue\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Lyue\Input.h" />
+    <ClInclude Include="src\Lyue\KeyCodes.h" />
     <ClInclude Include="src\Lyue\Layer.h" />
     <ClInclude Include="src\Lyue\LayerStack.h" />
     <ClInclude Include="src\Lyue\Log.h" />
+    <ClInclude Include="src\Lyue\MouseButtonCodes.h" />
     <ClInclude Include="src\Lyue\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
