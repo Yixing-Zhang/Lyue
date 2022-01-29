@@ -13,9 +13,6 @@
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Platform\OpenGL">
-      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
     </Filter>
@@ -43,6 +40,9 @@
     <ClInclude Include="src\Lyue\Events\MouseEvent.h">
       <Filter>Lyue\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lyue\ImGui\ImGuiBuild.h">
+      <Filter>Lyue\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lyue\ImGui\ImGuiLayer.h">
       <Filter>Lyue\ImGui</Filter>
     </ClInclude>
@@ -67,9 +67,6 @@
     <ClInclude Include="src\Lyue\Window.h">
       <Filter>Lyue</Filter>
     </ClInclude>
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
-      <Filter>Platform\OpenGL</Filter>
-    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsInput.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
@@ -82,6 +79,9 @@
     <ClCompile Include="src\Lyue\Application.cpp">
       <Filter>Lyue</Filter>
     </ClCompile>
+    <ClCompile Include="src\Lyue\ImGui\ImGuiBuild.cpp">
+      <Filter>Lyue\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\Lyue\ImGui\ImGuiLayer.cpp">
       <Filter>Lyue\ImGui</Filter>
     </ClCompile>
@@ -93,9 +93,6 @@
     </ClCompile>
     <ClCompile Include="src\Lyue\Log.cpp">
       <Filter>Lyue</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
-      <Filter>Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>Platform\Windows</Filter>

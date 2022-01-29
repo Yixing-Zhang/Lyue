@@ -8,6 +8,7 @@
 	// To Use Dll
 	#else
 		#define LYUE_API __declspec(dllimport)
+		#define IMGUI_API _declspec (dllimport)
 	#endif
 #else
 	#error Lyue only supports Windows!

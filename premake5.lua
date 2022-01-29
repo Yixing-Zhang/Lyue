@@ -111,6 +111,7 @@ project "Sandbox"
 	{
 		"Lyue/vendor/spdlog/include",
 		"Lyue/src",
+		"Lyue/vendor",
 		"%{IncludeDir.glm}"
 	}
 

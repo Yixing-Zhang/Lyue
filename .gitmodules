@@ -1,12 +1,12 @@
 [submodule "Lyue/vendor/spdlog"]
 	path = Lyue/vendor/spdlog
 	url = https://github.com/gabime/spdlog
-[submodule "Lyue/vendor/GLFW"]
-	path = Lyue/vendor/GLFW
-	url = https://github.com/Yixing-Zhang/glfw
-[submodule "Lyue/vendor/imgui"]
-	path = Lyue/vendor/imgui
-	url = https://github.com/Yixing-Zhang/imgui
 [submodule "Lyue/vendor/glm"]
 	path = Lyue/vendor/glm
 	url = https://github.com/g-truc/glm
+[submodule "Lyue/vendor/imgui"]
+	path = Lyue/vendor/imgui
+	url = https://github.com/TheCherno/imgui
+[submodule "Lyue/vendor/GLFW"]
+	path = Lyue/vendor/GLFW
+	url = https://github.com/TheCherno/glfw

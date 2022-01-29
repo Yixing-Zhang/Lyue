@@ -149,6 +149,7 @@
     <ClInclude Include="src\Lyue\Events\Event.h" />
     <ClInclude Include="src\Lyue\Events\KeyEvent.h" />
     <ClInclude Include="src\Lyue\Events\MouseEvent.h" />
+    <ClInclude Include="src\Lyue\ImGui\ImGuiBuild.h" />
     <ClInclude Include="src\Lyue\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Lyue\Input.h" />
     <ClInclude Include="src\Lyue\KeyCodes.h" />
@@ -157,18 +158,17 @@
     <ClInclude Include="src\Lyue\Log.h" />
     <ClInclude Include="src\Lyue\MouseButtonCodes.h" />
     <ClInclude Include="src\Lyue\Window.h" />
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\lypch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lyue\Application.cpp" />
+    <ClCompile Include="src\Lyue\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Lyue\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Lyue\Layer.cpp" />
     <ClCompile Include="src\Lyue\LayerStack.cpp" />
     <ClCompile Include="src\Lyue\Log.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\lypch.cpp">

@@ -1,5 +1,7 @@
 #include <Lyue.h>
 
+#include "imgui/imgui.h"
+
 class ExampleLayer : public Lyue::Layer
 {
 public:
@@ -17,6 +19,13 @@ public:
 		}
 	}
 
+	virtual void OnImGuiRender() override
+	{
+		ImGui::Begin("Test");
+		ImGui::Text("Hello World");
+		ImGui::End();
+	}
+
 	void OnEvent(Lyue::Event& e) override
 	{
 		//LY_TRACE("{0}", e);
@@ -29,7 +38,6 @@ public:
 	Sandbox() 
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Lyue::ImGuiLayer());
 	}
 
 	~Sandbox() 

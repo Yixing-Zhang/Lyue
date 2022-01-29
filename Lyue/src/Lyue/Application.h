@@ -4,8 +4,11 @@
 
 #include "Lyue/Window.h"
 #include "Lyue/LayerStack.h"
+
 #include "Lyue/Events/Event.h"
 #include "Lyue/Events/ApplicationEvent.h"
+
+#include "Lyue/ImGui/ImGuiLayer.h"
 
 namespace Lyue
 {
@@ -41,6 +44,8 @@ namespace Lyue
 		static Application* s_Instance;
 		// The Application Window
 		std::unique_ptr<Window> m_Window;
+		// The ImGui Layer
+		ImGuiLayer* m_ImGuiLayer;
 		// Apllication Whether Still Running
 		bool m_Running = true;
 		// Application Layer Stack
